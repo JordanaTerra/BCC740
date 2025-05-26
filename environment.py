@@ -1,5 +1,5 @@
 class MazeEnvironment:
-    def __init__(self,maze):
+    def __init__(self, maze):
 
         self.start, self.goal= self.pos_start_goal(maze)
         self.maze = maze
@@ -34,3 +34,4 @@ class MazeEnvironment:
                     if action != pos:
                         neighbors.append(action)
         return neighbors
+

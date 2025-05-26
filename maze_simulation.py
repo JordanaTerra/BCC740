@@ -23,6 +23,9 @@ for row in maze:
 
 env = MazeEnvironment(maze)
 
+print(env.start)
+print(env.goal)
+
 ''''# Escolha entre BFS e DFS:
 choice = input("Escolha o agente de busca (BFS ou DFS): ").strip().upper()
 
@@ -35,9 +38,11 @@ goal = agent.search()
 path = agent.get_path(goal)
 
 print(f"\nCaminho encontrado ({choice}):")'''
+
 agent = DFS(env)
 goal = agent.search()
 path = agent.get_path(goal)
+print(f"\nCaminho encontrado (BFS):")
 print(path)
 
 maze_with_path = [row.copy() for row in maze]

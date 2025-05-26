@@ -9,7 +9,7 @@ class BFS:
         while self.F:
             node = self.F.pop(0)
             if node == self.goal:
-                return node
+                return self.goal
             for v in self.env.get_neighbors(node):
                 if v not in self.visited:
                     self.visited[v] = node
@@ -19,8 +19,8 @@ class BFS:
         node = goal
         path = [node]
         while self.visited[node] != '':
-            node = self.visited[node]
             path.append(node)
+            node = self.visited[node]
         path.reverse()
         return path
 
@@ -39,14 +39,14 @@ class DFS:
                 return node
             for v in self.env.get_neighbors(node):
                 if v not in self.visited:
-                    self.visited[v] = node  # garantir que só marca se for novo
                     self.F.append(v)
+                    self.visited[v] = node  # garantir que só marca se for novo
 
     def get_path(self, goal):
         node = goal
         path = [node]
         while self.visited[node] != '':
-            node = self.visited[node]
             path.append(node)
+            node = self.visited[node]
         path.reverse()
         return path
